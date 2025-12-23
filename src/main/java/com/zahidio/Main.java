@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 public class Main {
     public static void main(String[] args) {
         Student student = new Student();
-        student.setName("hadi");
+        student.setName("Mohammad Hadi");
         student.setAge(20);
         student.setRollNumber(105);
 
@@ -22,10 +22,19 @@ public class Main {
         Session session = sf.openSession();
         Transaction trx = session.beginTransaction();
 
+//        Create
 //        session.persist(student);
-        s2 = session.find(Student.class, 105);
 
-        System.out.println(s2);
+//        Read
+//        s2 = session.find(Student.class, 105);
+
+//        Update
+//        session.merge(student); //Creates or updates
+
+//        Delete
+        session.remove(student);
+
+//        System.out.println(s2);
 
         trx.commit();
         session.close();
