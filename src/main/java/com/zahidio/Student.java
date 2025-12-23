@@ -6,7 +6,6 @@ import jakarta.persistence.Id;
 @Entity
 public class Student {
     @Id
-    private int id;
     private int rollNumber;
     private String name;
     private int age;
