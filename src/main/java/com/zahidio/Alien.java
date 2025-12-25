@@ -2,6 +2,8 @@ package com.zahidio;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity(name = "coders")
 public class Alien {
     @Id
@@ -17,8 +19,8 @@ public class Alien {
     @Transient
     private String password;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Laptop laptop;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "alien")
+    private List<Laptop> laptop;
 
     public String getFirstName() {
         return firstName;
@@ -52,11 +54,11 @@ public class Alien {
         this.id = id;
     }
 
-    public Laptop getLaptop() {
+    public List<Laptop> getLaptop() {
         return laptop;
     }
 
-    public void setLaptop(Laptop laptop) {
+    public void setLaptop(List<Laptop> laptop) {
         this.laptop = laptop;
     }
 

@@ -17,6 +17,17 @@ public class Laptop {
     @Column
     private String memory;
 
+    @ManyToOne
+    private Alien alien;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getBrand() {
         return brand;
     }
@@ -39,6 +50,14 @@ public class Laptop {
 
     public void setMemory(String memory) {
         this.memory = memory;
+    }
+
+    public Alien getAlien() {
+        return alien;
+    }
+
+    public void setAlien(Alien alien) {
+        this.alien = alien;
     }
 
     @Override
