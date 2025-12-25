@@ -2,8 +2,12 @@ package com.zahidio;
 
 import jakarta.persistence.*;
 
-@Embeddable
+@Entity
 public class Laptop {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column
     private String brand;
 

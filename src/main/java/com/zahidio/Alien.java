@@ -17,7 +17,7 @@ public class Alien {
     @Transient
     private String password;
 
-    @Column
+    @OneToOne(cascade = CascadeType.ALL)
     private Laptop laptop;
 
     public String getFirstName() {

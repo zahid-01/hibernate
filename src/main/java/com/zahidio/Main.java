@@ -7,12 +7,6 @@ import org.hibernate.cfg.Configuration;
 
 public class Main {
     public static void main(String[] args) {
-//        Student student = new Student();
-//        student.setName("Mohammad Hadi");
-//        student.setAge(20);
-//        student.setRollNumber(105);
-
-//        Student s2 = null;
 
         Alien ao = new Alien();
         ao.setFirstName("Khaka");
@@ -34,24 +28,12 @@ public class Main {
 
         Session session = sf.openSession();
         Transaction trx = session.beginTransaction();
+        
+        session.persist(ao);
 
-//        Create
-//        session.persist(student);
+//        Alien po = session.find(com.zahidio.Alien.class, 5);
 
-//        Read
-//        s2 = session.find(Student.class, 105);
-
-//        Update
-//        session.merge(student); //Creates or updates
-
-//        Delete
-//        session.remove(student);
-//        session.persist(laptop);
-//        session.persist(ao);
-
-        Alien po = session.find(com.zahidio.Alien.class, 5);
-
-        System.out.println(po);
+//        System.out.println(po);
 
         trx.commit();
         session.close();
