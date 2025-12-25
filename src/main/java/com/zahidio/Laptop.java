@@ -19,9 +19,6 @@ public class Laptop {
     @Column
     private String memory;
 
-    @ManyToMany
-    private List<Alien> alien;
-
     public Long getId() {
         return id;
     }
@@ -52,14 +49,6 @@ public class Laptop {
 
     public void setMemory(String memory) {
         this.memory = memory;
-    }
-
-    public List<Alien> getAlien() {
-        return alien;
-    }
-
-    public void setAlien(List<Alien> alien) {
-        this.alien = alien;
     }
 
     @Override

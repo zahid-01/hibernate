@@ -20,10 +20,6 @@ public class Main {
         ao2.setLastName("Hadi");
         ao2.setPassword("test1234");
 
-        Alien ao3 = new Alien();
-        ao3.setFirstName("Zain");
-        ao3.setLastName("Pala");
-        ao3.setPassword("test1234");
 
         Laptop laptop = new Laptop();
         laptop.setModel("rog");
@@ -40,14 +36,8 @@ public class Main {
         laptop3.setBrand("apple");
         laptop3.setMemory("16 GB");
 
-        laptop.setAlien(Arrays.asList(ao, ao3));
-        laptop2.setAlien(Arrays.asList(ao2));
-        laptop3.setAlien(Arrays.asList(ao3, ao));
-
-        ao.setLaptop(Arrays.asList(laptop, laptop3));
-        ao2.setLaptop(Arrays.asList(laptop2));
-        ao3.setLaptop(Arrays.asList(laptop3, laptop));
-
+        ao.setLaptop(Arrays.asList(laptop, laptop2));
+        ao2.setLaptop(Arrays.asList(laptop3));
 
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(com.zahidio.Alien.class);
@@ -60,11 +50,10 @@ public class Main {
 
         session.persist(ao);
         session.persist(ao2);
-        session.persist(ao3);
 
-//        Alien po = session.find(com.zahidio.Alien.class, 5);
+        Alien po = session.get(com.zahidio.Alien.class, 1);
 
-//        System.out.println(po);
+//        System.out.println("This is the record" + po);
 
         trx.commit();
         session.close();
