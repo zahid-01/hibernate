@@ -19,7 +19,7 @@ public class Alien {
     @Transient
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "alien")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "alien")
     private List<Laptop> laptop;
 
     public String getFirstName() {

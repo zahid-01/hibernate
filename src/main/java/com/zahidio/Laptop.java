@@ -2,6 +2,8 @@ package com.zahidio;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Laptop {
     @Id
@@ -17,8 +19,8 @@ public class Laptop {
     @Column
     private String memory;
 
-    @ManyToOne
-    private Alien alien;
+    @ManyToMany
+    private List<Alien> alien;
 
     public Long getId() {
         return id;
@@ -52,11 +54,11 @@ public class Laptop {
         this.memory = memory;
     }
 
-    public Alien getAlien() {
+    public List<Alien> getAlien() {
         return alien;
     }
 
-    public void setAlien(Alien alien) {
+    public void setAlien(List<Alien> alien) {
         this.alien = alien;
     }
 
